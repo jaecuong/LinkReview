@@ -6,10 +6,10 @@ export class UsersCtrl extends BaseCtrl {
   model = User;
 
    // Insert
-  protected insert = (req, res) => {
-    var deferred = Q.defer();
+  // protected insert = (req, res) => {
+  //   var deferred = Q.defer();
 
-  };
+  // };
 
 }
 

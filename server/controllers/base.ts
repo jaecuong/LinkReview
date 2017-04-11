@@ -5,7 +5,7 @@ abstract class BaseCtrl {
   abstract model: any;
 
   // Get all
-  protected getAll = (req, res) => {
+  getAll = (req, res) => {
     var deferred = Q.defer();
     this.model.find({}, (err, docs) => {
       if (err) {
@@ -20,7 +20,7 @@ abstract class BaseCtrl {
   };
 
   // Count all
-  protected count = (req, res) => {
+  count = (req, res) => {
     this.model.count((err, count) => {
       if (err) {
         res.send(400);
@@ -31,7 +31,7 @@ abstract class BaseCtrl {
   };
 
   // Insert
-  protected insert = (req, res) => {
+  insert = (req, res) => {
     var deferred = Q.defer();
     const obj = new this.model(req.body);
     obj.save((err, item) => {
@@ -46,7 +46,7 @@ abstract class BaseCtrl {
   };
 
   // Get by id
-  protected get = (req, res) => {
+  get = (req, res) => {
     var deferred = Q.defer();
     this.model.findOne({ _id: req.params.id }, (err, obj) => {
       if (err) {
@@ -61,7 +61,7 @@ abstract class BaseCtrl {
   };
 
   // Update by id
-  protected update = (req, res) => {
+  update = (req, res) => {
     var deferred = Q.defer();
     this.model.findOneAndUpdate({ _id: req.params.id }, req.body, (err) => {
       if (err) {
@@ -76,7 +76,7 @@ abstract class BaseCtrl {
   };
 
   // Delete by id
-  protected delete = (req, res) => {
+  delete = (req, res) => {
     var deferred = Q.defer();
     this.model.findOneAndRemove({ _id: req.params.id }, (err) => {
       if (err) {
