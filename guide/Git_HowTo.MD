@@ -10,6 +10,6 @@ git push -u origin master
 
 git remote add origin https://github.com/jaecuong/LinkReview.git
 
-Commmit trenvscode xong roi chay lenh nay thi code moi len tren git
+Commmit tren vscode xong roi chay lenh nay thi code moi len tren git
 
 git push -u origin master
